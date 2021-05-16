@@ -9,6 +9,7 @@ router.get("/characters", async (req, res) => {
       .get(
         `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.MY_MARVEL_API}`
       )
+      .find()
       .limit(20);
     res.status(200).json(response.data);
   } catch (error) {
